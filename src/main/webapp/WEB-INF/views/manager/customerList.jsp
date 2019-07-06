@@ -107,7 +107,9 @@
 																	  <td>${customer.customer_name}</td>
 																	  <td>${customer.customer_phone}</td>
 																	  <td>${customer.customer_address}</td>
-																	  <td>${customer.customer_gender}</td>
+																	          <c:if test="${customer.customer_gender==0}"><td>保密</td></c:if>
+																	          <c:if test="${customer.customer_gender==1}"><td>男</td></c:if>
+																	          <c:if test="${customer.customer_gender==2}"><td>女</td></c:if>
 																	  <td>${customer.customer_identity}</td>
 																	  <td>${customer.customer_remark}</td>
 																	   <td><button class="btn btn-sm btn-primary" onclick="window.location.href='${pageContext.request.contextPath }/customer/toCustomerEdit.do?customerId=${customer.customer_id}'">更新</button>&nbsp;&nbsp;<button class="btn btn-sm btn-primary" onclick="window.location.href='${pageContext.request.contextPath }/customer/deleteCustomer.do?customerId=${customer.customer_id}'" >删除</button></td>

@@ -86,7 +86,7 @@ public class OrderController {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
 				writer.println("<script language='javascript'>alert('提交成功！编号为："+i.get("order_id")
-				+"');window.location.href='http://localhost/transport/order/toOrderAdd.html'</script>");
+				+"');window.location.href='http://wu.ngrok.xiaomiqiu.cn/transport/order/toOrderAdd.html'</script>");
 			}else {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
@@ -203,7 +203,7 @@ public class OrderController {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
 				writer.println("<script language='javascript'>alert('修改成功！编号为："+entity.get("order_id")
-				+"');window.location.href='http://localhost/transport/order/toOrderList.html'</script>");
+				+"');window.location.href='http://wu.ngrok.xiaomiqiu.cn/transport/order/toOrderList.html'</script>");
 			}else {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
@@ -339,7 +339,7 @@ public class OrderController {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
 				writer.println("<script language='javascript'>alert('核对成功！编号为："+entity.get("order_id")
-				+"');window.location.href='http://localhost/transport/order/toOrderInstoreList.html'</script>");
+				+"');window.location.href='http://wu.ngrok.xiaomiqiu.cn/transport/order/toOrderInstoreList.html'</script>");
 			}else {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
@@ -374,7 +374,7 @@ public class OrderController {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
 				writer.println("<script language='javascript'>alert('报价成功！编号为："+entity.get("order_id")
-				+"');window.location.href='http://localhost/transport/order/toOrderQuoteList.html'</script>");
+				+"');window.location.href='http://wu.ngrok.xiaomiqiu.cn/transport/order/toOrderQuoteList.html'</script>");
 			}else {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
@@ -410,7 +410,7 @@ public class OrderController {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
 				writer.println("<script language='javascript'>alert('审核成功！编号为："+entity.get("order_id")
-				+"');window.location.href='http://localhost/transport/order/toOrderReviewList.html'</script>");
+				+"');window.location.href='http://wu.ngrok.xiaomiqiu.cn/transport/order/toOrderReviewList.html'</script>");
 			}else {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
@@ -424,15 +424,22 @@ public class OrderController {
 	@RequestMapping(value = "/toOrderFahuo")
 	@TokenForm(create = true)
 	public String toOrderFahuo(String orderId, HttpServletRequest request,
-			HttpSession session) {
+			HttpSession session,HttpServletResponse response) {
 		logger.debug("-跳转到发货-" + orderId);
 		try {
 			Map<String, Object> order = orderService.findById(orderId);
-			request.setAttribute("orderdd", order);
+			if(order!=null) {
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter writer = response.getWriter();
+				writer.println("<script language='javascript'>alert('无此订单号或订单未到发货时期！！！);history.back();</script>");
+			}else {
+				request.setAttribute("orderdd", order);
+				return "manager/order-review";
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "manager/order-review";
+		return null;
 	}
 	@RequestMapping(value = "/orderFahuo")
 	@TokenForm(remove = true)
@@ -447,7 +454,7 @@ public class OrderController {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
 				writer.println("<script language='javascript'>alert('发货成功！编号为："+entity.get("order_id")
-				+"');window.location.href='http://localhost/transport/order/toOrderReviewList.html'</script>");
+				+"');window.location.href='http://wu.ngrok.xiaomiqiu.cn/transport/order/toOrderReviewList.html'</script>");
 			}else {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
@@ -501,7 +508,7 @@ public class OrderController {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
 				writer.println("<script language='javascript'>alert('添加成功！编号为："+entity.get("order_id")
-				+"');window.location.href='http://localhost/transport/admin/toIndex.do'</script>");
+				+"');window.location.href='http://wu.ngrok.xiaomiqiu.cn/transport/admin/toIndex.do'</script>");
 			}else {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();

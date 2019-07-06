@@ -117,7 +117,7 @@ public class OrderProvider {
 			}
 		}
 		builder.delete(builder.length() - 1, builder.length());
-		builder.append("where order_id=#{order_id}");
+		builder.append(" where order_id=#{order_id}");
 		return builder.toString();
 	}
 }

@@ -51,7 +51,7 @@
 								</ul>
 							</div>
 						</div>
-						<form action="${pageContext.request.contextPath }/order/addOrder.do" method="post" onsubmit="simbit()" id="OrderID">
+						<form action="${pageContext.request.contextPath }/order/addOrder.do" method="post" onsubmit="return toVaild()" id="OrderID">
 							<input name="token" type="hidden" value="${sessionScope.token }"/>
 							<input name="token.invoke" type="hidden" value="/order/addOrder.do"/>
 							<table class="table table-bordered">
@@ -293,12 +293,30 @@
 				$("#pick_transid").val("");
 			}
 		}
-		function simbit(){
+		/* function toVaild(){
+			 var name = $("#order_recievername").val();
+		     var phone = $("#order_recieverphone").val();
+		     var address = $("#order_recieveraddress").val();
+		     if (name == '' ) {
+		    	 	alert("请填写收货人姓名");
+		            return false;
+		     }
+		     if(phone==''){
+		            alert('请填写收货电话');
+		            return false;
+		     }
+		     if(address==''){
+		            alert('请填写收货地址');
+		            return false;
+		     }
+		} */
+		function toVaild(){
 			for (var i=0; i < $("#OrderID table tr td input").length-1; i++) {
 		    	   if($("#OrderID table tr td input")[i].val()==""){
-						alert("不能为空，请填完");
+						alert("必填项不能为空，请填完");
 						return false
 		    	   }
+		    	   return true
 			}
 		}
 		/* $(function(){

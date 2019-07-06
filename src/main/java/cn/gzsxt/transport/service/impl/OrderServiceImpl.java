@@ -96,7 +96,7 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public Map<String, Object> findById(String orderId) {
 		Map<String, Object> map = orderMapper.findById(orderId);
-		if(map!=null) {
+		if(map!=null ) {
 			Map<String, Object> customer = customerMapper.findCustomerById(map.get("customer_id"));
 			Map<String, Object> orderPick = itemMapper.findPickById(orderId);
 			List<Map<String, Object>> orderItems = itemMapper.findItemById(orderId);

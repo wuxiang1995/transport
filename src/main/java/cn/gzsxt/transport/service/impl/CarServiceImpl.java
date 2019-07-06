@@ -35,8 +35,8 @@ public class CarServiceImpl implements CarService {
 		int start=index*size;
 		List<Map<String, Object>> cars = carMapper.findByConditionToPage(condition, start, size);
 		for (Map<String, Object> map : cars) {
-			if(map.get("net_id")!=null) {
-				Map<String, Object> map2 = nMapper.findById(Integer.valueOf(map.get("net_id").toString()));
+			if(map.get("network_id")!=null) {
+				Map<String, Object> map2 = nMapper.findById(Integer.valueOf(map.get("network_id").toString()));
 				map.put("networks", map2);
 			}
 		}

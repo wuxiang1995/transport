@@ -141,35 +141,31 @@
 		<script src="${pageContext.request.contextPath}/lib/ace-admin/js/jquery-2.1.4.min.js"></script>
 		<script src="${pageContext.request.contextPath}/lib/ace-admin/js/bootstrap.min.js"></script>
 		<script src="${pageContext.request.contextPath}/lib/ace-admin/js/ace-elements.min.js"></script>
-	
+		<script type="text/javascript" src="${pageContext.request.contextPath }/js/layer2.4/layer.js"></script>
 	<script>
-		$(function() {
+		function toVaild(){
+			 var name = $("#customer_name").val();
+		     var phone = $("#customer_phone").val();
+		     var address = $("#customer_address").val();
+		     var identity = $("#customer_identity").val();
+		     if (name == '' ) {
+		    	 	alert("请填写客户名称");
+		            return false;
+		     }
+		     if(phone==''){
+		            alert('请填写客户电话');
+		            return false;
+		     }
+		     if(address==''){
+		            alert('请填写客户地址');
+		            return false;
+		     }
+		     if(identity==''){
+		            alert('请填写客户身份证');
+		            return false;
+		     }
 	
-			/* //表单提交前验证
-			$("#customerID").ajax({
-				dataType : 'json',
-				contentType : 'application/json;charset=UTF-8',
-				beforeSubmit : function(arr, $form, options) {
-					var uflag = true;
-					 for (var i=0; i < arr.length; i++) {
-					       if (!arr[i].value) {
-					    	   alert("不能留空，请完善");
-					           return false;
-					        }
-					   } 
-					return uflag; 
-				},
-				success : function(data, statusText, xhr, $form) {
-					console.log(data);
-					if (data == 1) {
-						layer.alert("添加成功");
-					} else if (data == 0) {
-						layer.alert("添加失败");
-					}
-				}
-			}); */
-			
-		})
+		}
 	</script>
 
 </body>

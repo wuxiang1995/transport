@@ -59,8 +59,8 @@
 			<div id="contact">
 				<div id="lianxi">
 					&nbsp;<br> &nbsp;<br> &nbsp;<span class="STYLE1">客服TEL</span>：<span
-							class="STYLE4">010-14125365</span><br> &nbsp;<span
-								class="STYLE1">公司邮箱</span>：<span class="STYLE4">wuxiang369@163.com
+							class="STYLE4">0757-88888888</span><br> &nbsp;<span
+								class="STYLE1">公司邮箱</span>：<span class="STYLE4">wuxiang689@163.com
 							</span>
 				</div>
 			</div>
@@ -74,13 +74,13 @@
 				<ul>
 					<li><a href="#">抓紧时间 认真贯彻 规范市场 科学发展<img
 							src="${pageContext.request.contextPath}/lib/global_images/new.gif" border="0" /></a></li>
-					<li><a href="#">省管局辛局长深入会员单位GLOBAL物流司调研检查工作<img
+					<li><a href="#">省管局辛局长深入会员单位TMS物流司调研检查工作<img
 							src="${pageContext.request.contextPath}/lib/global_images/new.gif" border="0" /></a></li>
-					<li><a href="#">公司在杭州召开2008年GLOBAL物流快递网络工作会议</a></li>
-					<li><a href="#">《GLOBAL人简报》第39期全文</a></li>
-					<li><a href="#">GLOBAL物流公司律师郑重声明</a></li>
-					<li><a href="#">国家邮政局市场监管司安全监督处处长王永利来我公司检</a></li>
-					<li><a href="#">《GLOBAL人简报》第38期全文</a></li>
+					<li><a href="#">公司在杭州召开2008年TMS物流快递网络工作会议</a></li>
+					<li><a href="#">《TMS人简报》第39期全文</a></li>
+					<li><a href="#">TMS 物流公司律师郑重声明</a></li>
+					<li><a href="#">国家邮政局市场监管司安全监督处处长徐永健来我公司检查调研</a></li>
+					<li><a href="#">《TMS人简报》第38期全文</a></li>
 				</ul>
 			</div>
 			<div id="title2">
@@ -119,7 +119,7 @@
 				<img src="${pageContext.request.contextPath}/lib/global_images/office.jpg"
 							border="0" /><br>
 						&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="http://192.168.2.101/transport/login.jsp"><img src="${pageContext.request.contextPath}/lib/global_images/in.jpg"
+						href="http://wu.ngrok.xiaomiqiu.cn/transport/login.jsp"><img src="${pageContext.request.contextPath}/lib/global_images/in.jpg"
 							border="0" onclick="" /></a>
 			</div>
 		</div>
